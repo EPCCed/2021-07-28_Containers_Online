@@ -1,17 +1,35 @@
 ---
 title: Setup
 ---
-### Website accounts to create
+
+There are four items you should try to complete before you join the course:
+
+1. Create a Docker Hub website account
+2. Install Docker on your local system
+3. Check you have a working SSH client
+4. Apply for an account on ARCHER2 and login
+
+If you need help, please let the instructors and helpers know at the start of the lesson.
+
+## 1. Website accounts to create
 Please seek help at the start of the lesson if you have not been able to establish a website account on:
 - The [Docker Hub](http://hub.docker.com). We will use the Docker Hub to download pre-built container images, and for you to upload and download container images that you create, as explained in the relevant lesson episodes.
 
-### Files to download
+## 2. Files to download
 
 Download the [`docker-intro.zip`]({{ page.root }}/files/docker-intro.zip) file. _This file can alternatively be downloaded from the `files` directory in the [docker-introduction GitHub repository][docker-introduction repository]_.
 
 Move the downloaded file to your Desktop and unzip it. It should unzip to a folder called `docker-intro`. 
 
-### Software to install
+## 3. Software to install
+
+There are two pieces of software you need to have installed for this course:
+
+- Docker
+- SSH Client
+
+### Docker
+
 Docker's installation experience has steadily improved, however situations will arise in which installing Docker on your computer may not be straightforward unless you have a large amount of technical experience.
 Workshops try to have helpers on hand that have worked their way through the install process, but do be prepared for some troubleshooting.
 
@@ -66,6 +84,85 @@ Let's say you want to copy text off the lesson website and paste it into a file 
 
         lines.
         '@ | Set-Content myfile -encoding ascii
+
+### SSH client
+
+All attendees should have an SSH client installed.
+SSH is a tool that allows us to connect to and use a remote computer, within a terminal window, as our own.
+Please follow the directions below to install an SSH client for your system.
+
+**Windows**
+
+Modern versions of Windows have SSH available in Powershell. You can test if it is available by typing `ssh --help` in Powershell. If it is
+installed, you should see some useful output. If it is not installed, you will get an error. If SSH is not available in Powershell, then
+you should install MobaXterm as described below.
+
+An alternative is to install MobaXterm from [http://mobaxterm.mobatek.net](http://mobaxterm.mobatek.net). You will want to get the Home edition (Installer edition). However, if Git Bash works, you do not need this.
+
+**macOS**
+
+macOS comes with SSH pre-installed, so you should not need to install anything.
+
+**Linux**
+
+Linux users do not need to install anything, you should be set!
+
+## 4. Account on ARCHER2
+
+Please sign up for your account on our HPC machine, [ARCHER2](https://www.archer2.ac.uk/), which will be available to
+you for the duration of the course and for a few days afterwards, to allow you to
+complete the practical exercises and put some of what you have learned into practice.
+
+### Sign up for a SAFE account
+
+To sign up, you must first register for an account on [SAFE](https://safe.epcc.ed.ac.uk/) (our service administration web application):
+
+If you are already registered on the ARCHER or Tier-2 SAFE you do not need to re-register. Please proceed to the next step.
+
+1. Go to the [SAFE New User Signup Form](https://safe.epcc.ed.ac.uk/signup.jsp)
+2. Fill in your personal details. You can come back later and change them if you wish. _**Note:** you should register using your institutional or company email address - email domains such as gmail.com, outlook.com, etc. are not allowed to be used for access to ARCHER2_
+3. Click “Submit”
+4. You are now registered. A single use login link will be emailed to the email address you provided. You can use this link to login and set your password.
+
+### Sign up for an account on ARCHER2 through SAFE
+
+In addition to your password, you will need an SSH key pair to access ARCHER2. There is useful guidance on how
+to generate SSH key pairs in [the ARCHER2 documentation](https://docs.archer2.ac.uk/user-guide/connecting/#ssh-key-pairs).
+It is useful to have your SSH key pair generated before you request an account on ARCHER2 as you can add it when 
+you request the account
+
+1. [Login to SAFE](https://safe.epcc.ed.ac.uk)
+2. Go to the Menu "Login accounts" and select "Request login account"
+3. Choose the `ta032` project “Choose Project for Machine Account” box and click "Next"
+4.  Select the *ARCHER2* machine in the list of available machines
+5.  Click *Next*
+6.  Enter a username for the account and an SSH public
+    key
+    1.  If you do not specify an SSH key at this stage, your default
+        key will be used (if you have one). For users who had an ARCHER
+        account, the default key will be your ARCHER SSH key.
+    2.  You can always add an SSH key (or additional SSH keys) using
+        the process described below.
+7.  Click *Request*
+
+Now you have to wait for the course organiser to accept your request to register. When this has happened, your account will be created on ARCHER2.
+Once this has been done, you should be sent an email. _If you have not received an email but believe that your account should have been activated, check your account status in SAFE which will also show when the account has been activated._ You can then pick up your one shot initial password for ARCHER2 from your SAFE account.
+
+### Log into ARCHER2
+
+You should now be able to log into ARCHER2 by following the [login instructions in the ARCHER2 documentation](https://docs.archer2.ac.uk/user-guide/connecting/#ssh-clients).
+
+## (Optional) Install Singularity on your local system
+
+The Singularity part of this course will be undertaken on ARCHER2. If you do not wish to use ARCHER2 to run your Singularity images, you will need to install Singularity on your local system. _These instructions are optional and are not required to complete the course._
+
+If you are running Linux and would like to install Singularity locally on your system, Singularity provide the free, open source [Singularity Community Edition](https://sylabs.io/singularity/). 
+
+You will need to install various dependencies on your system and then build Singularity from source code. If you have Linux systems knowledge and would like to attempt a local install of Singularity, you can find full details of the installation process in the [INSTALL.md](https://github.com/sylabs/singularity/blob/master/INSTALL.md) file within the Singularity repository. This file explains how to install the prerequisites and build and install the software. Singularity is written in the [Go](https://golang.org/) programming language and Go is the main dependency that you'll need to install on your system. The process of installing Go and any other requirements is detailed in the INSTALL.md file.
+
+If you do not have access to a Linux system where you can build and install Singularity but you have administrative privileges on another system, you could look at installing a virtualisation tool such as [VirtualBox](https://www.virtualbox.org/) on which you could run a Linux Virtual Machine (VM) image. Within the Linux VM image, you will be able to install Singularity. Again this is beyond the scope of the course.
+
+If you have a Mac system, you can also try the beta release of [Singularity Desktop for macOS](https://sylabs.io/singularity-desktop-macos/). (This tool is progressing all the time though it did not work well for the instructors at the time when this material was initially written!)
 
 {% include links.md %}
 
