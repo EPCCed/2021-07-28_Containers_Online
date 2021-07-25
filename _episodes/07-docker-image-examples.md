@@ -50,12 +50,8 @@ Shifter. However, both of these programs can be used to run Docker container ima
 so often people create their container as a Docker container image, so they can
 run it using either of Docker or Singularity.
 
-There isn't yet a working example of how to use Docker container images on a shared
-computing system, partially because each system is slightly different, but the
-following resources show what it can look like:
-
-- [Introduction to Singularity](https://carpentries-incubator.github.io/singularity-introduction/): See the episode titled "Running MPI parallel jobs using Singularity containers"
-- [Container Workflows at Pawsey](https://pawseysc.github.io/container-workflows/): See the episode titled "Run containers on HPC with Shifter (and Singularity)"
+We will see examples of how to run containers on an HPC system in day two of this workshop.
+This will include pulling images from Docker Hub.
 
 ## Seeking Examples
 

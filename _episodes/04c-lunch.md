@@ -1,6 +1,6 @@
 ---
 title: "Lunch"
-break: 100
+break: 90
 ---
 
 Lunch break

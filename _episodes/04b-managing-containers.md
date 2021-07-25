@@ -110,9 +110,9 @@ $ docker container rm 9c698655416a
 ~~~
 {: .output}
 
-**Be careful** with this command.
-If you have containers you may want to reconnect to, you should not use this command.
-It will ask you if to confirm you want to remove these containers, see output below.
+You can remove all exited containers using the `docker container prune` command. **Be careful**
+with this command. If you have containers you may want to reconnect to, you should not use this
+command. It will ask you if to confirm you want to remove these containers, see output below.
 If successful it will print the full `CONTAINER ID` back to you.
 ~~~
 $ docker container prune
