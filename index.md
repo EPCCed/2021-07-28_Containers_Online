@@ -39,6 +39,8 @@ This course aims to introduce the use of containers with the goal of using them 
 
 The practical work in this lesson is primarily aimed at using Docker on your own laptop, building Singularity containers on your own laptop (using a Docker container!) and using Singularity containers on a remote high performance computing (HPC) system. Beyond your laptop, software container technologies such as Docker can also be used in the cloud and on HPC systems. Some of the material in this lesson will be applicable to those environments too.
 
+This site covers day 1 of the course (focussed on Docker). The material for day 2 (focussed on Singularity) can be found at: [Introduction to Singularity](https://epcced.github.io/2021-07-29_Singularity_Online/)
+
 <h2 id="general">General Information</h2>
 
 {% comment %}
