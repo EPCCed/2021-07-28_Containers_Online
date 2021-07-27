@@ -292,8 +292,8 @@ CMD ["python3", "/home/sum.py"]
 
 Build and test it:
 ~~~
-$ docker build -t alpine-sum:v1 .
-$ docker run alpine-sum:v1
+$ docker build -t alice/alpine-sum:v1 .
+$ docker run alice/alpine-sum:v1
 ~~~
 {: .language-bash}
 
@@ -301,7 +301,7 @@ You'll notice that you can run the container without arguments just fine,
 resulting in `sum = 0`, but this is boring. Supplying arguments however
 doesn't work:
 ~~~
-docker run alpine-sum:v1 10 11 12
+docker run alice/alpine-sum:v1 10 11 12
 ~~~
 {: .language-bash}
 results in
@@ -337,11 +337,11 @@ CMD ["10", "11"]
 
 Build and test it:
 ~~~
-$ docker build -t alpine-sum:v2 .
+$ docker build -t alice/alpine-sum:v2 .
 # Most of the time you are interested in the sum of 10 and 11:
-$ docker run alpine-sum:v2
+$ docker run alice/alpine-sum:v2
 # Sometimes you have more challenging calculations to do:
-$ docker run alpine-sum:v2 12 13 14
+$ docker run alice/alpine-sum:v2 12 13 14
 ~~~
 {: .language-bash}
 
@@ -351,7 +351,7 @@ $ docker run alpine-sum:v2 12 13 14
 > that does only sums, but you need an interactive shell to examine
 > the container:
 > ~~~
-> $ docker run -it alpine-sum:v2 /bin/sh
+> $ docker run -it alice/alpine-sum:v2 /bin/sh
 > ~~~
 > {: .language-bash}
 > will yield
@@ -361,7 +361,7 @@ $ docker run alpine-sum:v2 12 13 14
 > {: .output}
 > You need to override the `ENTRYPOINT` statement in the image like so:
 > ~~~
-> $ docker run -it --entrypoint /bin/sh alpine-sum:v2
+> $ docker run -it --entrypoint /bin/sh alice/alpine-sum:v2
 > ~~~
 > {: .language-bash}
 {: .callout}
@@ -382,8 +382,8 @@ RUN apk add --update python3 py3-pip python3-dev
 
 Build and test it:
 ~~~
-$ docker build -t alpine-sum:v3 .
-$ docker run alpine-sum:v3 sum.py 1 2 3 4
+$ docker build -t alice/alpine-sum:v3 .
+$ docker run alice/alpine-sum:v3 sum.py 1 2 3 4
 ~~~
 {: .language-bash}
 
